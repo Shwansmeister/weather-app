@@ -55,8 +55,10 @@ app.get('/weather', (req, res) => {
       if (error) {
         return res.send({error})
       }
+      console.log(location, forecastData.weather, forecastData.temperature, forecastData.precip)
       res.send({
         location: location,
+        weather: forecastData.weather,
         temperature: forecastData.temperature,
         rain: forecastData.precip
       })
